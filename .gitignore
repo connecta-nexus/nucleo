@@ -1,0 +1,30 @@
+# Credenciais locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+# Dados operacionais e exports privados
+data/
+backups/
+logs/
+uploads/
+private/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.sql.gz
+# Dependências e builds
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+# Ambiente
+.DS_Store
+Thumbs.db
+__pycache__/
+.venv/

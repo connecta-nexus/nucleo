@@ -2,7 +2,9 @@
 
 Base versionada da central operacional da Connecta.ai.
 
-**Estado:** estrutura e especificação inicial. Ainda não há aplicação executável, banco, autenticação ou integrações ativas.
+**Estado:** núcleo e especificações versionados; a operação online do Animus + NEXUS
+Office está documentada em [ANIMUS + NEXUS OFFICE — operação online](docs/animus-office-online.md).
+O runtime de produção continua separado e protegido por Railway, Cloudflare e n8n.
 
 ## Objetivo
 
@@ -13,6 +15,7 @@ Prioridade: QG Ferreira e PULSE, seguidos pelo comercial da Connecta.ai. Ferreir
 ## Comece aqui
 
 - [Arquitetura e limites](docs/arquitetura.md)
+- [ANIMUS + NEXUS OFFICE — operação online](docs/animus-office-online.md)
 - [Plano de implementação e critérios de aceite](docs/plano-implementacao.md)
 - [Rotina PULSE](docs/pulse.md)
 - [Operação privada](docs/operacao-privada.md)
@@ -37,9 +40,7 @@ Cada pasta contém um README com seu contrato inicial; não representa funcional
 
 ## Privacidade
 
-O código deste repositório é público. Dados operacionais devem permanecer em ambiente privado, fora do Git. A execução planejada é local, vinculada a 127.0.0.1; publicação, túneis e acesso remoto não fazem parte desta base. Não há deploy automático.
-
-Copie futuramente `.env.example` para `.env` somente no ambiente local. O arquivo é uma referência de configuração, sem consumidor implementado. Nunca publique dados reais de clientes, estoque, vendas, conversas, gravações ou credenciais.
+O código deste repositório é público. Dados operacionais devem permanecer em ambiente privado, fora do Git. Segredos ficam somente em Railway Variables, Cloudflare Secrets e n8n Credentials. Nunca publique dados reais de clientes, estoque, vendas, conversas, gravações ou credenciais.
 
 ## Próximo incremento
 
@@ -47,4 +48,4 @@ Implementar uma fatia completa do PULSE: selecionar contexto autorizado → cada
 
 ## Evolução
 
-Mudanças pequenas e revisáveis; registrar novas decisões em docs antes de ampliar módulos. Reutilizar o núcleo em vez de criar CRM ou financeiro por empresa. Automações e IA entram depois do fluxo manual validado.
+Mudanças pequenas e revisáveis; registrar decisões em docs antes de ampliar módulos. Reutilizar o núcleo em vez de criar CRM ou financeiro por empresa. Automações e IA entram por adaptadores versionados e só entram em produção após testes, aprovação e rollback definido.
